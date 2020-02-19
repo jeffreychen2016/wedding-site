@@ -8,7 +8,8 @@ export default class S3BucketStack extends cdk.Stack {
 
     new Bucket(this, 'WeddingSiteHostingBucket', {
         bucketName:bucketName,
-        publicReadAccess: true
+        publicReadAccess: true,
+        websiteIndexDocument: 'index.html'
     })
   }
 }

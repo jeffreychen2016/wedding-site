@@ -8,6 +8,9 @@ test('S3Bucket Created', () => {
   const stack = new stacks.S3BucketStack(app, 'MyTestStack');
   // THEN
   expectCDK(stack).to(haveResource("AWS::S3::Bucket",{
-    BucketName: 'wedding-site-hosting-bucket'
+    BucketName: 'wedding-site-hosting-bucket',
+    WebsiteConfiguration: {
+        "IndexDocument": "index.html"
+      }
   }));
 });
